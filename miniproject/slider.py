@@ -21,7 +21,16 @@ window = tk.Tk()
 window.title("2R Robot Control")
 
 
-window.geometry('600x600')
+window.geometry('800x800')
+
+arm_img = Image.open("./miniproject/manipulator.jpg")
+arm_img = arm_img.resize((300,300))
+arm_img = ImageTk.PhotoImage(arm_img)  # Replace with your image file
+
+# Create a label to hold the image
+image_label = tk.Label(window, image=arm_img)
+image_label.pack()
+
 image = Image.open("/home/vinoth/robotcontrol/miniproject/home.png") # Load your jpg image
 image = image.resize((20, 20))
 home_icon = ImageTk.PhotoImage(image)
