@@ -2,16 +2,16 @@ import tkinter as tk
 from PIL import Image, ImageTk
 
 def update_x(value):
-    x_value.set(f'X: {int(value)}')  # Display X value as an integer
+    x_value.set(f'X: {int(value)} deg')  # Display X value as an integer
     # Add code to send X value to the servo controlling the X axis
 
 def update_y(value):
-    y_value.set(f'Y: {int(value)}')  # Display Y value as an integer
+    y_value.set(f'Y: {int(value)} deg')  # Display Y value as an integer
     # Add code to send Y value to the servo controlling the Y axis
 
 def move_to_home():
-    x_value.set("X: 45")
-    y_value.set("Y: 45")
+    x_value.set("X: 45 deg")
+    y_value.set("Y: 45 deg")
     slider_x.set(45)
     slider_y.set(45)
     # Add code to send home position to the servos
@@ -29,8 +29,8 @@ home_icon = ImageTk.PhotoImage(image)
 # Labels for displaying the current positions
 x_value = tk.StringVar()
 y_value = tk.StringVar()
-x_value.set("X: 0")
-y_value.set("Y: 0")
+x_value.set("X: 0 deg")
+y_value.set("Y: 0 deg")
 
 label_x = tk.Label(window, textvariable=x_value)
 label_x.pack(pady=20)
