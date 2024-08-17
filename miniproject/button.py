@@ -29,9 +29,11 @@ def move_to_home():
 # Create the main window
 window = tk.Tk()
 window.title("2R Robot Control")
+window.geometry('300x300')
 image = Image.open("./miniproject/home.png") # Load your jpg image
 image = image.resize((20, 20))
 home_icon = ImageTk.PhotoImage(image)
+
 # Labels to display current positions
 x_value = tk.StringVar()
 y_value = tk.StringVar()
