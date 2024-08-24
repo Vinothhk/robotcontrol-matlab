@@ -15,19 +15,19 @@ def update_x(delta):
     global x_pos
     x_pos += delta
     x_value.set(f'Joint 1: {x_pos} deg')
-    ser.write(bytearray([x_pos,0]))
+    msg = str(x_pos)+' '+str(y_pos)
+    print(msg)
+    ser.write(msg.encode())
     print('Joint 1 Updated')
-    print(f'x: {x_pos}')
-    # Add code to send the updated x_pos value to the servo
 
 def update_y(delta):
     global y_pos
     y_pos += delta
     y_value.set(f'Joint 2: {y_pos} deg')
-    ser.write(bytearray([0,y_pos]))
+    msg = str(x_pos)+' '+str(y_pos)
+    print(msg)
+    ser.write(msg.encode())
     print('Joint 2 Updated')
-    print(f'y: {y_pos}')
-    # Add code to send the updated y_pos value to the servo
 
 # Set x and y to home position
 def move_to_home():
@@ -36,6 +36,11 @@ def move_to_home():
     y_pos = 45 # Home y value
     x_value.set(f'Joint 1: {x_pos} deg')
     y_value.set(f'Joint 2: {y_pos} deg')
+    msg = str(x_pos)+' '+str(y_pos)
+    print(msg)
+    ser.write(msg.encode())
+    print('Joint 1 & 2 Updated')
+
     
     # Add code to send the home position to the servos
 
