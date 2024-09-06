@@ -8,7 +8,7 @@ import time
 x_pos=0
 y_pos = 0
 
-ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
+ser = serial.Serial('/dev/ttyACM1', 9600, timeout=1)
 
 # Update and display the x and y positions
 def update_x(delta):
